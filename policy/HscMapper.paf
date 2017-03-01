@@ -231,6 +231,42 @@ calibrations: {
         validStartName: validStart
         validEndName: validEnd
     }
+    sky: {
+        template:    "SKY/%(calibDate)s/%(filter)s/SKY-%(calibDate)s-%(filter)s-%(ccd)03d.fits"
+        python:      "lsst.afw.image.ExposureF"
+        persistable: "ExposureF"
+        storage:     "FitsStorage"
+        level:       "Ccd"
+        tables:      "sky"
+        columns:     "ccd"
+        columns:     "filter"
+        columns:     "taiObs"
+        reference:   "raw_visit"
+        refCols:     "visit"
+        refCols:     "filter"
+        filter:      true
+        validRange:  true
+        validStartName: validStart
+        validEndName: validEnd
+    }
+    sky2: {
+        template:    "SKY/%(calibDate)s/%(filter)s/SKY2-%(calibDate)s-%(filter)s-%(ccd)03d.fits"
+        persistable: "ExposureF"
+        storage:     "FitsStorage"
+        python:      "lsst.afw.image.ExposureF"
+        level:       "Ccd"
+        tables:      "sky"
+        columns:     "ccd"
+        columns:     "filter"
+        columns:     "taiObs"
+        reference:   "raw_visit"
+        refCols:     "visit"
+        refCols:     "filter"
+        filter:      true
+        validRange:  true
+        validStartName: validStart
+        validEndName: validEnd
+    }
     bias_camera: {
         template:    "focalplane/BIAS/%(calibDate)s/NONE/BIAS-%(calibDate)s.fits"
         persistable: "ExposureF"
@@ -254,6 +290,20 @@ calibrations: {
     }
     fringe_camera: {
         template:    "focalplane/FRINGE/%(calibDate)s/%(filter)s/FRINGE-%(calibDate)s-%(filter)s.fits"
+        persistable: "ExposureF"
+        python:      "lsst.afw.image.ExposureF"
+        storage:     "FitsStorage"
+        level:       None
+    }
+    sky_camera: {
+        template:    "focalplane/SKY/%(calibDate)s/%(filter)s/SKY-%(calibDate)s-%(filter)s.fits"
+        persistable: "ExposureF"
+        python:      "lsst.afw.image.ExposureF"
+        storage:     "FitsStorage"
+        level:       None
+    }
+    sky2_camera: {
+        template:    "focalplane/SKY/%(calibDate)s/%(filter)s/SKY2-%(calibDate)s-%(filter)s.fits"
         persistable: "ExposureF"
         python:      "lsst.afw.image.ExposureF"
         storage:     "FitsStorage"
