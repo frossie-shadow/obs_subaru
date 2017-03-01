@@ -231,6 +231,34 @@ calibrations: {
         validStartName: validStart
         validEndName: validEnd
     }
+    bias_camera: {
+        template:    "focalplane/BIAS/%(calibDate)s/NONE/BIAS-%(calibDate)s.fits"
+        persistable: "ExposureF"
+        python:      "lsst.afw.image.ExposureF"
+        storage:     "FitsStorage"
+        level:       None
+    }
+    dark_camera: {
+        template:    "focalplane/DARK/%(calibDate)s/NONE/DARK-%(calibDate)s.fits"
+        persistable: "ExposureF"
+        python:      "lsst.afw.image.ExposureF"
+        storage:     "FitsStorage"
+        level:       None
+    }
+    flat_camera: {
+        template:    "focalplane/FLAT/%(calibDate)s/%(filter)s/FLAT-%(calibDate)s-%(filter)s.fits"
+        persistable: "ExposureF"
+        python:      "lsst.afw.image.ExposureF"
+        storage:     "FitsStorage"
+        level:       None
+    }
+    fringe_camera: {
+        template:    "focalplane/FRINGE/%(calibDate)s/%(filter)s/FRINGE-%(calibDate)s-%(filter)s.fits"
+        persistable: "ExposureF"
+        python:      "lsst.afw.image.ExposureF"
+        storage:     "FitsStorage"
+        level:       None
+    }
     bfKernel: {
         template:    "BFKERNEL/brighter_fatter_kernel.pkl"
         python:      "numpy.ndarray"
