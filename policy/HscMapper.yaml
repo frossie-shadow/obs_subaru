@@ -37,6 +37,7 @@ exposures:
     template: '%(pointing)05d/%(filter)s/corr/ICEXP-%(visit)07d-%(ccd)03d.fits'
   calexp:
     template: '%(pointing)05d/%(filter)s/corr/CORR-%(visit)07d-%(ccd)03d.fits'
+    recipe: basicCompression
   revexp:
     level: Ccd
     persistable: ExposureF
@@ -121,8 +122,10 @@ exposures:
     template: '%(pointing)05d/%(filter)s/corr/%(tract)04d/CALEXP-%(visit)07d-%(ccd)03d.fits'
   deepCoadd_directWarp:
     template: deepCoadd/%(filter)s/%(tract)d/%(patch)s/warp-%(filter)s-%(tract)d-%(patch)s-%(visit)d.fits
+    recipe: basicCompression
   deepCoadd_psfMatchedWarp:
     template: deepCoadd/%(filter)s/%(tract)d/%(patch)s/psfMatchedWarp-%(filter)s-%(tract)d-%(patch)s-%(visit)d.fits
+    recipe: basicCompression
   deepCoadd_diff:
     level: Skytile
     persistable: ExposureF
